@@ -1,0 +1,16 @@
+{
+  "name": "BCU Innovation Labs",
+  "short_name": "BIL",
+  "description": "A student-led, non-profit innovation programme for early-stage founders at Birmingham City University.",
+  "start_url": "/index.html",
+  "display": "browser",
+  "background_color": "#fdfcfb",
+  "theme_color": "#111110",
+  "icons": [
+    {
+      "src": "./images/favicon.jpeg",
+      "sizes": "180x180",
+      "type": "image/jpeg"
+    }
+  ]
+}

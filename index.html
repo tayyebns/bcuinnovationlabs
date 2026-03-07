@@ -1,328 +1,378 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Innovation Labs — BCU</title>
-  <meta name="description" content="BCU Innovation Labs is a student startup programme at BCU — from first idea to demo day."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BCU Innovation Labs</title>
+    <meta
+      name="description"
+      content="BCU Innovation Labs is a student-led, non-profit innovation programme helping Birmingham City University students turn early-stage ideas into structured, validated concepts ready for pitching and real-world testing."
+    />
+    <meta name="theme-color" content="#111110" />
 
-    /* ── HERO ── */
-    .hero {
-      min-height: calc(100vh - 5.5rem);
-      display: grid;
-      grid-template-rows: 1fr auto;
-      border-bottom: 1px solid var(--rule);
-      background: var(--warm);
-    }
-    .hero-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: end;
-      padding: 7rem 3.5rem 4rem;
-      gap: 4rem;
-    }
-    .hero-left {}
-    .hero-eyebrow {
-      font-size: .58rem; letter-spacing: .3em; text-transform: uppercase;
-      color: var(--navy-mid); margin-bottom: 2rem;
-      display: flex; align-items: center; gap: 1rem;
-    }
-    .hero-eyebrow::before {
-      content: ''; width: 24px; height: 1px; background: var(--navy-mid);
-    }
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      font-weight: 700; line-height: 1;
-      letter-spacing: -.01em; color: var(--navy);
-    }
-    h1 em { font-style: italic; font-weight: 300; display: block; }
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bcuinnovationlabs.com/index.html" />
 
-    .hero-right {
-      display: flex; flex-direction: column; gap: 2.5rem;
-      padding-top: 1rem;
-    }
-    .hero-dek {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; line-height: 1.7; font-style: italic;
-      color: var(--navy-mid); font-weight: 300;
-    }
-    .hero-body-text {
-      font-size: .85rem; line-height: 1.9; color: var(--text);
-      font-weight: 300;
-    }
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BCU Innovation Labs" />
+    <meta
+      property="og:description"
+      content="A student-led, non-profit innovation programme for early-stage founders at Birmingham City University."
+    />
+    <meta property="og:url" content="https://bcuinnovationlabs.com/" />
 
-    /* ── STRIP ── */
-    .hero-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--rule);
-    }
-    .strip-cell {
-      padding: 1.8rem 2rem;
-      border-right: 1px solid var(--rule);
-      display: flex; flex-direction: column; gap: .35rem;
-    }
-    .strip-cell:last-child { border-right: none; }
-    .strip-n {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.9rem; font-weight: 700; color: var(--navy); line-height: 1;
-    }
-    .strip-l {
-      font-size: .56rem; letter-spacing: .22em; text-transform: uppercase;
-      color: var(--navy-mid);
-    }
+    <!-- Favicons -->
+    <link rel="icon" href="./images/favicon.jpeg" sizes="any" />
+    <link rel="icon" href="./images/favicon.jpeg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="./images/favicon.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
-    /* ── ABOUT ── */
-    .about {
-      display: grid; grid-template-columns: 240px 1fr;
-      padding: 6rem 3.5rem; gap: 6rem;
-      border-bottom: 1px solid var(--rule);
-    }
-    .about-label-col {
-      display: flex; flex-direction: column; gap: 1rem;
-      padding-top: .3rem;
-    }
-    .vertical-rule {
-      width: 1px; height: 60px; background: var(--rule); margin-top: .5rem;
-    }
-    .about-content { display: flex; flex-direction: column; gap: 1.8rem; }
-    .about-content p {
-      font-size: .9rem; line-height: 1.9; color: var(--text); font-weight: 300;
-      max-width: 65ch;
-    }
-    .about-content p strong { font-weight: 500; color: var(--navy); }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
 
-    /* ── PILLARS ── */
-    .pillars {
-      padding: 6rem 3.5rem; border-bottom: 1px solid var(--rule);
-    }
-    .pillars-header {
-      display: flex; justify-content: space-between; align-items: baseline;
-      margin-bottom: 3.5rem;
-      padding-bottom: 1.2rem;
-      border-bottom: 1px solid var(--rule);
-    }
-    .pillars-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 700; color: var(--navy);
-    }
-    .pillars-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
-    }
-    .pillar {
-      padding: 2.5rem 2.5rem 2.5rem 0;
-      border-right: 1px solid var(--rule);
-      margin-right: 2.5rem;
-    }
-    .pillar:last-child { border-right: none; margin-right: 0; padding-right: 0; }
-    .pillar-accent {
-      width: 28px; height: 3px; border-radius: 2px; margin-bottom: 1.2rem;
-    }
-    .accent-rust { background: var(--rust); }
-    .accent-gold { background: var(--gold); }
-    .accent-sage { background: var(--sage); }
-    .pillar-n {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: .8rem; font-style: italic; color: rgba(15,32,96,.3);
-      margin-bottom: .5rem;
-    }
-    .pillar-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; font-weight: 700; color: var(--navy);
-      margin-bottom: .7rem; line-height: 1.2;
-    }
-    .pillar-body {
-      font-size: .8rem; line-height: 1.8; color: var(--navy-mid); font-weight: 300;
-    }
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Skip navigation (WCAG 2.4.1) -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    /* ── LINKS ROW ── */
-    .links-row {
-      padding: 4rem 3.5rem;
-      display: flex; gap: 0;
-      border-bottom: 1px solid var(--rule);
-    }
-    .page-link {
-      flex: 1; padding: 2rem 2.5rem;
-      border-right: 1px solid var(--rule);
-      text-decoration: none; display: flex; flex-direction: column; gap: .7rem;
-      transition: background .2s;
-    }
-    .page-link:last-child { border-right: none; }
-    .page-link:hover { background: var(--navy-pale); }
-    .pl-label {
-      font-size: .56rem; letter-spacing: .25em; text-transform: uppercase;
-      color: var(--navy-mid);
-    }
-    .pl-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 700; color: var(--navy);
-    }
-    .pl-arrow {
-      font-size: .7rem; color: var(--navy-mid); margin-top: auto;
-      transition: transform .2s;
-    }
-    .page-link:hover .pl-arrow { transform: translateX(4px); }
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-shell">
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="BCU Innovation Labs — home"
+        >
+          <span class="brand-top" aria-hidden="true">Innovation Labs</span>
+          <span class="brand-bottom">Birmingham City University</span>
+        </a>
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-body { grid-template-columns: 1fr; padding: 4rem 1.5rem 3rem; }
-      .hero-strip { grid-template-columns: 1fr 1fr; }
-      .about { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
-      .about-label-col { flex-direction: row; align-items: center; }
-      .vertical-rule { display: none; }
-      .pillars { padding: 4rem 1.5rem; }
-      .pillars-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .pillar { border-right: none; border-bottom: 1px solid var(--rule); margin: 0; padding: 0 0 2.5rem; }
-      .pillar:last-child { border-bottom: none; padding-bottom: 0; }
-      .links-row { flex-direction: column; padding: 2rem 1.5rem; }
-      .page-link { border-right: none; border-bottom: 1px solid var(--rule); }
-      .page-link:last-child { border-bottom: none; }
-    }
-  </style>
-</head>
-<body>
-  <div class="c-dot" id="cd"></div>
-  <div class="c-ring" id="cr"></div>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav-links"
+          aria-label="Open navigation menu"
+        >
+          <span class="nav-toggle-box" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
 
-  <nav>
-    <a href="index.html" class="nav-logo">
-      <span class="nl-top">Innovation Labs</span>
-      <span class="nl-btm">BCU</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="workshops.html">Workshops</a></li>
-      <li><a href="demoday.html">Demo Day</a></li>
-      <li><a href="team.html">Team</a></li>
-    </ul>
-  </nav>
+        <ul class="nav-links" id="primary-nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="workshops.html">Programme</a></li>
+          <li><a href="demoday.html">Demo Day</a></li>
+          <li><a href="team.html">Team &amp; Partners</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <main>
+    <main id="main-content" tabindex="-1">
+      <!-- ── Hero ──────────────────────────────────────────── -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero-grid">
+            <div>
+              <div class="hero-eyebrow">
+                <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+                <span class="kicker kicker--flush"
+                  >BCU Innovation Labs · Cohort I · 2026</span
+                >
+              </div>
+              <h1 class="hero-title reveal" id="hero-heading">
+                A serious path from <span class="light">idea</span> to pitch.
+              </h1>
+            </div>
 
-    <section class="hero">
-      <div class="hero-body">
-        <div class="hero-left">
-          <div class="hero-eyebrow">BCU Innovation Labs &nbsp;·&nbsp; Cohort I</div>
-          <h1>
-            Building the<br>
-            <em>next generation</em><br>
-            of founders.
-          </h1>
+            <div class="hero-copy reveal">
+              <p class="hero-dek">
+                BCU Innovation Labs is a student-led, non-profit innovation
+                programme for early-stage founders at Birmingham City
+                University.
+              </p>
+              <p class="hero-body">
+                Practical, structured, and built to take student ideas from
+                first thinking through to public pitch.
+              </p>
+              <div class="hero-actions">
+                <a href="workshops.html" class="button"
+                  >Explore the programme</a
+                >
+                <a href="demoday.html" class="button-secondary">See Demo Day</a>
+              </div>
+            </div>
+          </div>
+
+          <dl class="hero-strip reveal" aria-label="Programme at a glance">
+            <div class="hero-stat">
+              <dt class="stat-label">Structure</dt>
+              <dd class="stat-value">Student-led</dd>
+            </div>
+            <div class="hero-stat">
+              <dt class="stat-label">Sessions</dt>
+              <dd class="stat-value">8 sessions</dd>
+            </div>
+            <div class="hero-stat">
+              <dt class="stat-label">Demo Day</dt>
+              <dd class="stat-value">20 May 2026</dd>
+            </div>
+            <div class="hero-stat">
+              <dt class="stat-label">Venue</dt>
+              <dd class="stat-value">STEAMHouse, Birmingham</dd>
+            </div>
+          </dl>
         </div>
-        <div class="hero-right reveal">
-          <p class="hero-dek">
-            A student startup programme at BCU — structured, demanding, and built for students who mean it.
+      </section>
+
+      <!-- ── Statement ─────────────────────────────────────── -->
+      <section class="statement" aria-label="Programme philosophy">
+        <div class="container">
+          <div class="statement-grid">
+            <div class="statement-copy reveal">
+              <p>
+                Student founders rarely fail because they lack enthusiasm. They
+                usually fail because their ideas stay vague, untested, and
+                poorly positioned. BCU Innovation Labs exists to fix that.
+              </p>
+            </div>
+            <div class="statement-note reveal">
+              <p>
+                Across a tightly structured series of sessions, participants
+                move from idea to validation, from validation to positioning,
+                and from positioning to pitch readiness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── What BIL does ─────────────────────────────────── -->
+      <section class="section" aria-labelledby="what-bil-does">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-label reveal" aria-hidden="true">
+              What BIL does
+            </div>
+            <div>
+              <h2 class="section-title reveal" id="what-bil-does">
+                Built to make early ideas sharper, stronger, and easier to
+                believe in.
+              </h2>
+              <p class="section-intro reveal">
+                The programme does not ask students to pretend they already have
+                a company. It gives them the structure, language, and practical
+                exposure needed to make an early-stage venture legible to other
+                people.
+              </p>
+            </div>
+          </div>
+
+          <div class="cards-grid three" role="list">
+            <article class="card reveal" role="listitem">
+              <span class="card-index" aria-hidden="true">01</span>
+              <h3>Refine the idea</h3>
+              <p>
+                Students learn how to move from a raw concept to a structured
+                startup proposition with clearer assumptions, a stronger
+                narrative, and a more credible sense of purpose.
+              </p>
+            </article>
+            <article class="card reveal" role="listitem">
+              <span class="card-index" aria-hidden="true">02</span>
+              <h3>Build confidence</h3>
+              <p>
+                BIL strengthens the way founders explain what they are doing,
+                why it matters, and how to communicate it professionally to
+                peers, mentors, judges, and external stakeholders.
+              </p>
+            </article>
+            <article class="card reveal" role="listitem">
+              <span class="card-index" aria-hidden="true">03</span>
+              <h3>Open the pipeline</h3>
+              <p>
+                The programme prepares students for demo days, competitions,
+                accelerators, and the wider opportunities that follow when a
+                concept is no longer half-formed.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── How it works ──────────────────────────────────── -->
+      <section
+        class="section section--tight section--alt"
+        aria-labelledby="how-it-works"
+      >
+        <div class="container">
+          <div class="section-head">
+            <div class="section-label reveal" aria-hidden="true">
+              How it works
+            </div>
+            <div>
+              <h2 class="section-title reveal" id="how-it-works">
+                Four stages. One direction.
+              </h2>
+              <p class="section-intro reveal">
+                Each part of the programme addresses a specific weakness common
+                in early-stage student ventures. Together, the sessions create a
+                clean development arc from first thinking to public
+                presentation.
+              </p>
+            </div>
+          </div>
+
+          <div class="process" role="list" aria-label="Programme stages">
+            <div class="process-step reveal" role="listitem">
+              <span class="process-step-num" aria-hidden="true">Stage 1</span>
+              <h3>Idea</h3>
+              <p>
+                Orientation, context, and the discipline to define what problem
+                is actually worth solving.
+              </p>
+            </div>
+            <div class="process-step reveal" role="listitem">
+              <span class="process-step-num" aria-hidden="true">Stage 2</span>
+              <h3>Validate</h3>
+              <p>
+                Enterprise fundamentals, startup advice, and technical thinking
+                grounded in practical reality.
+              </p>
+            </div>
+            <div class="process-step reveal" role="listitem">
+              <span class="process-step-num" aria-hidden="true">Stage 3</span>
+              <h3>Position</h3>
+              <p>
+                Brand identity, user perception, and the strategic framing
+                needed to make an idea intelligible.
+              </p>
+            </div>
+            <div class="process-step reveal" role="listitem">
+              <span class="process-step-num" aria-hidden="true">Stage 4</span>
+              <h3>Pitch</h3>
+              <p>
+                By the end, founders are ready to present their ventures
+                publicly at Demo Day within Innovation Fest.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Where next ─────────────────────────────────────── -->
+      <section class="section section--tight" aria-labelledby="where-next">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-label reveal" aria-hidden="true">
+              Where next
+            </div>
+            <div>
+              <h2 class="section-title reveal" id="where-next">
+                Go deeper into the programme.
+              </h2>
+            </div>
+          </div>
+
+          <nav class="link-panels" aria-label="Programme sections">
+            <a href="workshops.html" class="link-panel reveal">
+              <span class="link-label">Programme</span>
+              <span class="link-title">Sessions</span>
+              <span class="link-copy"
+                >See the full sequence from orientation through to founders day
+                and the final public showcase.</span
+              >
+            </a>
+            <a href="demoday.html" class="link-panel reveal">
+              <span class="link-label">Public event</span>
+              <span class="link-title">Demo Day</span>
+              <span class="link-copy"
+                >Explore the event that brings Cohort I to the stage at
+                Innovation Fest in STEAMHouse, Birmingham.</span
+              >
+            </a>
+            <a href="team.html" class="link-panel reveal">
+              <span class="link-label">People</span>
+              <span class="link-title">Team &amp; Partners</span>
+              <span class="link-copy"
+                >Meet the organisers, facilitators, collaborators, and partner
+                organisations behind the programme.</span
+              >
+            </a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ── CTA ───────────────────────────────────────────── -->
+      <section class="cta-band" aria-labelledby="cta-heading">
+        <div class="container">
+          <div class="cta-band-inner">
+            <div class="reveal">
+              <h2 id="cta-heading">Cohort I goes public on 20 May.</h2>
+              <p class="muted">
+                On Tuesday 20 May 2026, founders pitch live and exhibit their
+                ventures at Innovation Fest in STEAMHouse, Birmingham.
+              </p>
+            </div>
+            <a href="demoday.html" class="button-ghost reveal">View Demo Day</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container">
+        <div class="footer-upper">
+          <a
+            href="index.html"
+            class="brand"
+            aria-label="BCU Innovation Labs — home"
+          >
+            <span class="brand-top" aria-hidden="true">Innovation Labs</span>
+            <span class="brand-bottom">Birmingham City University</span>
+          </a>
+
+          <nav aria-label="Footer navigation">
+            <ul class="footer-links" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="workshops.html">Programme</a></li>
+              <li><a href="demoday.html">Demo Day</a></li>
+              <li><a href="team.html">Team &amp; Partners</a></li>
+            </ul>
+          </nav>
+
+          <a
+            href="https://www.linkedin.com/company/bcu-innovation-labs"
+            target="_blank"
+            class="button-secondary"
+          >
+            Get in touch
+          </a>
+        </div>
+
+        <div class="footer-lower">
+          <p class="footer-copy">
+            © <span data-year></span> BCU Innovation Labs · Birmingham City
+            University
           </p>
-          <p class="hero-body-text">
-            BCU Innovation Labs takes students from first idea to demo day through a series of workshops, mentorship sessions, and industry roundtables. This is the record of Cohort I.
-          </p>
+          <nav aria-label="Legal links">
+            <ul class="footer-legal" role="list">
+              <li><a href="privacy.html">Privacy policy</a></li>
+              <li><a href="accessibility.html">Accessibility</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
-      <div class="hero-strip">
-        <div class="strip-cell">
-          <span class="strip-n">I</span>
-          <span class="strip-l">First Cohort</span>
-        </div>
-        <div class="strip-cell">
-          <span class="strip-n">9</span>
-          <span class="strip-l">Workshops</span>
-        </div>
-        <div class="strip-cell">
-          <span class="strip-n">May 20</span>
-          <span class="strip-l">Demo Day</span>
-        </div>
-        <div class="strip-cell">
-          <span class="strip-n">BCU</span>
-          <span class="strip-l">STEAMhouse, Birmingham</span>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <section class="about">
-      <div class="about-label-col reveal">
-        <span class="section-label">About</span>
-        <div class="vertical-rule"></div>
-      </div>
-      <div class="about-content reveal">
-        <p>
-          BCU Innovation Labs is a structured startup programme for students at BCU. It exists because student entrepreneurs deserve more than a pitch competition and a handshake — they need a real, demanding path from raw idea to something worth backing.
-        </p>
-        <p>
-          Across nine workshops, participants develop their ideas, validate their assumptions, build their brands, and learn to pitch. Every session is built around a deliverable. <strong>There are no passengers.</strong>
-        </p>
-        <p>
-          The programme culminates in a Demo Day at Innovation Fest on 20 May at STEAMhouse — a live pitching session, startup expo, and celebration of everything Cohort I has built.
-        </p>
-      </div>
-    </section>
-
-    <section class="pillars">
-      <div class="pillars-header reveal">
-        <span class="pillars-title">How we work</span>
-        <span class="section-label">Programme ethos</span>
-      </div>
-      <div class="pillars-grid">
-        <div class="pillar reveal">
-          <div class="pillar-accent accent-rust"></div>
-          <div class="pillar-n">I.</div>
-          <div class="pillar-title">Problem first, always</div>
-          <p class="pillar-body">Every session begins with the problem, not the solution. We train participants to understand pain before they build anything.</p>
-        </div>
-        <div class="pillar reveal">
-          <div class="pillar-accent accent-gold"></div>
-          <div class="pillar-n">II.</div>
-          <div class="pillar-title">Deliverables over discussion</div>
-          <p class="pillar-body">You leave every session with something tangible. A validated concept. A brand framework. A pitch structure. Nothing is purely theoretical.</p>
-        </div>
-        <div class="pillar reveal">
-          <div class="pillar-accent accent-sage"></div>
-          <div class="pillar-n">III.</div>
-          <div class="pillar-title">Build responsibly</div>
-          <p class="pillar-body">Speed and ambition matter. So does building with security, ethics, and user trust in mind from day one — not as an afterthought.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="links-row">
-      <a href="workshops.html" class="page-link reveal">
-        <span class="pl-label">Programme</span>
-        <span class="pl-title">Workshops</span>
-        <span class="pl-arrow">Explore the sessions →</span>
-      </a>
-      <a href="demoday.html" class="page-link reveal">
-        <span class="pl-label">The finale</span>
-        <span class="pl-title">Demo Day</span>
-        <span class="pl-arrow">20 May · STEAMhouse →</span>
-      </a>
-      <a href="team.html" class="page-link reveal">
-        <span class="pl-label">People</span>
-        <span class="pl-title">The Team</span>
-        <span class="pl-arrow">Meet the people behind BIL →</span>
-      </a>
-    </div>
-
-  </main>
-
-  <footer>
-    <a href="index.html" class="footer-logo nav-logo">
-      <span class="nl-top">Innovation Labs</span>
-      <span class="nl-btm">BCU</span>
-    </a>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="workshops.html">Workshops</a></li>
-      <li><a href="demoday.html">Demo Day</a></li>
-      <li><a href="team.html">Team</a></li>
-    </ul>
-    <span class="footer-copy">© 2025 BCU Innovation Labs</span>
-  </footer>
-
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

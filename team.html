@@ -1,269 +1,642 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Team — BCU Innovation Labs</title>
-  <meta name="description" content="The team behind BCU Innovation Labs Cohort I."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team &amp; Partners — BCU Innovation Labs</title>
+    <meta
+      name="description"
+      content="Meet the organisers, facilitators, collaborators, and partners behind BCU Innovation Labs Cohort I at Birmingham City University."
+    />
+    <meta name="theme-color" content="#111110" />
 
-    /* ── PAGE HEADER ── */
-    .page-header {
-      padding: 7rem 3.5rem 4rem;
-      border-bottom: 1px solid var(--rule);
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: end;
-    }
-    .ph-eyebrow {
-      font-size: .58rem; letter-spacing: .3em; text-transform: uppercase;
-      color: var(--navy-mid); margin-bottom: 1.5rem;
-    }
-    .ph-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-weight: 700; line-height: 1; color: var(--navy);
-    }
-    .ph-title em { font-style: italic; font-weight: 300; }
-    .ph-dek {
-      font-size: .88rem; line-height: 1.85;
-      color: var(--navy-mid); font-weight: 300;
-      align-self: end;
-    }
+    <link rel="canonical" href="https://bcuinnovationlabs.com/team.html" />
 
-    /* ── TEAM GRID ── */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-bottom: 1px solid var(--rule);
-    }
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Team &amp; Partners — BCU Innovation Labs"
+    />
+    <meta
+      property="og:description"
+      content="Meet the organisers, facilitators, and partner organisations behind BCU Innovation Labs Cohort I."
+    />
+    <meta property="og:url" content="https://bcuinnovationlabs.com/team.html" />
 
-    .team-card {
-      border-right: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      display: flex; flex-direction: column;
-      transition: background .18s;
-    }
-    .team-card:nth-child(3n) { border-right: none; }
+    <link rel="icon" href="./images/favicon.jpeg" sizes="any" />
+    <link rel="icon" href="./images/favicon.jpeg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="./images/favicon.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
-    /* Photo area */
-    .tc-photo {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: var(--navy-pale);
-      border-bottom: 1px solid var(--rule);
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-    }
-    .tc-photo img {
-      width: 100%; height: 100%; object-fit: cover;
-      display: block;
-    }
-    .tc-photo-placeholder {
-      display: flex; flex-direction: column; align-items: center; gap: .8rem;
-    }
-    .tcp-icon {
-      width: 52px; height: 52px; border-radius: 50%;
-      border: 1px solid var(--rule);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .tcp-icon svg { opacity: .25; }
-    .tcp-label {
-      font-size: .55rem; letter-spacing: .22em; text-transform: uppercase;
-      color: rgba(15,32,96,.25);
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
 
-    /* Text area */
-    .tc-body {
-      padding: 2rem 2rem 2.5rem;
-      display: flex; flex-direction: column; gap: .6rem;
-      flex: 1;
-    }
-    .tc-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem; font-weight: 700; color: var(--navy);
-      line-height: 1.2;
-    }
-    .tc-role {
-      font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--navy-mid);
-    }
-    .tc-bio {
-      font-size: .8rem; line-height: 1.75; color: var(--navy-mid);
-      font-weight: 300; margin-top: .4rem;
-    }
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    /* Placeholder state */
-    .team-card.placeholder .tc-body {
-      opacity: .4;
-    }
-    .team-card.placeholder .tc-name,
-    .team-card.placeholder .tc-role,
-    .team-card.placeholder .tc-bio {
-      background: rgba(15,32,96,.06);
-      color: transparent;
-      border-radius: 2px;
-    }
-    .team-card.placeholder .tc-name { width: 60%; height: 1.2rem; }
-    .team-card.placeholder .tc-role { width: 40%; height: .8rem; }
-    .team-card.placeholder .tc-bio { width: 100%; height: 3rem; }
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-shell">
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="BCU Innovation Labs — home"
+        >
+          <span class="brand-top" aria-hidden="true">Innovation Labs</span>
+          <span class="brand-bottom">Birmingham City University</span>
+        </a>
 
-    /* ── EMPTY STATE MESSAGE ── */
-    .team-empty {
-      padding: 5rem 3.5rem;
-      border-bottom: 1px solid var(--rule);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; gap: 1.2rem;
-      min-height: 260px;
-    }
-    .te-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 300; font-style: italic;
-      color: rgba(15,32,96,.3);
-    }
-    .te-sub {
-      font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
-      color: rgba(15,32,96,.2);
-    }
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav-links"
+          aria-label="Open navigation menu"
+        >
+          <span class="nav-toggle-box" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .page-header { grid-template-columns: 1fr; padding: 5rem 1.5rem 3rem; }
-      .team-grid { grid-template-columns: 1fr 1fr; }
-      .team-card:nth-child(3n) { border-right: 1px solid var(--rule); }
-      .team-card:nth-child(2n) { border-right: none; }
-    }
-    @media (max-width: 560px) {
-      .team-grid { grid-template-columns: 1fr; }
-      .team-card { border-right: none; }
-    }
-  </style>
-</head>
-<body>
-  <div class="c-dot" id="cd"></div>
-  <div class="c-ring" id="cr"></div>
-
-  <nav>
-    <a href="index.html" class="nav-logo">
-      <span class="nl-top">Innovation Labs</span>
-      <span class="nl-btm">BCU</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="workshops.html">Workshops</a></li>
-      <li><a href="demoday.html">Demo Day</a></li>
-      <li><a href="team.html">Team</a></li>
-    </ul>
-  </nav>
-
-  <main>
-
-    <header class="page-header">
-      <div>
-        <div class="ph-eyebrow">Cohort I · People</div>
-        <h1 class="ph-title">The<br><em>team.</em></h1>
+        <ul class="nav-links" id="primary-nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="workshops.html">Programme</a></li>
+          <li><a href="demoday.html">Demo Day</a></li>
+          <li><a href="team.html">Team &amp; Partners</a></li>
+        </ul>
       </div>
-      <p class="ph-dek reveal">The people behind BCU Innovation Labs — organisers, facilitators, and the industry professionals who made Cohort I possible.</p>
-    </header>
+    </nav>
 
-    <!--
-      TEAM GRID
-      ─────────
-      To add a team member, copy one of the .team-card blocks below,
-      replace the placeholder content, and add a photo path to <img>.
-
-      Structure per card:
-        <div class="team-card">
-          <div class="tc-photo">
-            <img src="photos/name.jpg" alt="Full Name"/>
-          </div>
-          <div class="tc-body">
-            <div class="tc-name">Full Name</div>
-            <div class="tc-role">Role / Title</div>
-            <p class="tc-bio">Short bio paragraph here.</p>
-          </div>
-        </div>
-    -->
-
-    <div class="team-grid">
-
-      <!-- Placeholder cards — replace with real team members -->
-      <div class="team-card placeholder reveal">
-        <div class="tc-photo">
-          <div class="tc-photo-placeholder">
-            <div class="tcp-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
+    <main id="main-content" tabindex="-1">
+      <!-- ── Page hero ─────────────────────────────────────── -->
+      <section class="page-hero" aria-labelledby="page-heading">
+        <div class="container">
+          <div class="page-hero-grid">
+            <div>
+              <span class="kicker">People behind the programme</span>
+              <h1 class="page-title reveal" id="page-heading">
+                The team, facilitators, and <span class="light">partners.</span>
+              </h1>
             </div>
-            <span class="tcp-label">Photo</span>
-          </div>
-        </div>
-        <div class="tc-body">
-          <div class="tc-name">Team Member</div>
-          <div class="tc-role">Role</div>
-          <p class="tc-bio">Bio coming soon.</p>
-        </div>
-      </div>
-
-      <div class="team-card placeholder reveal">
-        <div class="tc-photo">
-          <div class="tc-photo-placeholder">
-            <div class="tcp-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
+            <div class="page-intro reveal">
+              <p>
+                BCU Innovation Labs is organised by students and strengthened by
+                contributors across enterprise support, entrepreneurship,
+                business education, law, design, and cyber security. The aim is
+                simple: build a programme that is practical enough to move
+                founders forward and credible enough for others to take
+                seriously.
+              </p>
             </div>
-            <span class="tcp-label">Photo</span>
           </div>
         </div>
-        <div class="tc-body">
-          <div class="tc-name">Team Member</div>
-          <div class="tc-role">Role</div>
-          <p class="tc-bio">Bio coming soon.</p>
-        </div>
-      </div>
+      </section>
 
-      <div class="team-card placeholder reveal">
-        <div class="tc-photo">
-          <div class="tc-photo-placeholder">
-            <div class="tcp-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
+      <!-- ── Core team ──────────────────────────────────────── -->
+      <section class="section" aria-labelledby="team-heading">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-label reveal" aria-hidden="true">Core team</div>
+            <div>
+              <h2 class="section-title reveal" id="team-heading">
+                The people building and running Cohort I.
+              </h2>
             </div>
-            <span class="tcp-label">Photo</span>
+          </div>
+
+          <div class="team-grid">
+            <article class="person reveal" aria-labelledby="person-tayyeb">
+              <span class="person-role">Founder and Programme Director</span>
+              <h3 id="person-tayyeb">
+                <a
+                  href="https://www.linkedin.com/in/tayyeb-nadeem-somro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span>Tayyeb Nadeem Somro</span
+                  ><span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  ></a
+                >
+              </h3>
+              <p>
+                Cyber Security undergraduate, founder of Unihack, former
+                president of BCU Computer Science Society, and Head of Cyber
+                Security Research at BCU Cyber Security Society. He leads the
+                programme's direction with a focus on standards, execution, and
+                giving student founders a more credible route from ambition to
+                action.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-mohamed">
+              <span class="person-role">Programme Delivery Lead</span>
+              <h3 id="person-mohamed">
+                <a
+                  href="https://www.linkedin.com/in/m-a-dahir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span>Mohamed Dahir</span
+                  ><span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  ></a
+                >
+              </h3>
+              <p>
+                Computer Science undergraduate specialising in Artificial
+                Intelligence and Machine Learning, with an incoming placement
+                year in Data and Analytics at National Highways. He supports
+                delivery across the cohort with a structured, analytical
+                approach shaped by data thinking, machine learning, and
+                practical problem solving.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-tanzila">
+              <span class="person-role">Head of Partnerships</span>
+              <h3 id="person-tanzila">
+                <a
+                  href="https://www.linkedin.com/in/tanzila-mudassar-4b82a2256"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span>Tanzila Mudassar</span
+                  ><span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  ></a
+                >
+              </h3>
+              <p>
+                Business graduate with a strong interest in strategy, growth,
+                and innovation. Alongside her roles as a Student Ambassador and
+                International Outreach Support Officer at Birmingham City
+                University, she brings experience in analytical and operational
+                support, helping build the partner relationships that give the
+                programme wider reach.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-hamzah">
+              <span class="person-role">Head of Community Engagement</span>
+              <h3 id="person-hamza">
+                <a
+                  href="https://www.linkedin.com/in/hamzah-abdur-rahman-5553ab2b8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Hamzah Abdur Rahman</span>
+                  <span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  >
+                </a>
+              </h3>
+              <p>
+                Computer Science undergraduate with strong foundations in
+                problem solving, design thinking, and programming. He brings
+                leadership experience from volunteer work and helps shape the
+                community side of the programme so that participation feels
+                active, coherent, and worth showing up for.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-baber">
+              <span class="person-role">Web Platform Engineer</span>
+              <h3 id="person-baber">
+                <a
+                  href="https://www.linkedin.com/in/baberr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span>Baber Khan</span
+                  ><span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  ></a
+                >
+              </h3>
+              <p>
+                Computer Science undergraduate focused on building robust,
+                efficient, and secure software systems. He maintains the web
+                platforms for Unihack and the BCU Cyber Security Society,
+                handling design, development, hosting, and maintenance, and
+                brings that same full-stack discipline to BCU Innovation Labs.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-mhamza">
+              <span class="person-role">Software Engineer</span>
+              <h3 id="person-mhamza">
+                <a
+                  href="https://www.linkedin.com/in/mohammad-hamza-97729322b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span>Mohammad Hamza</span
+                  ><span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  ></a
+                >
+              </h3>
+              <p>
+                Cyber Security undergraduate with a strong interest in
+                protecting systems against threats and failure. He combines
+                technical curiosity with hands-on AI training experience through
+                Outlier, and also serves as Social Media Manager at BCU Cyber
+                Security Society, giving him a useful view across both technical
+                and audience-facing work.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-yasamin">
+              <span class="person-role">Software Engineer</span>
+              <h3 id="person-yasamin">
+                <a
+                  href="https://www.linkedin.com/in/yasaminzaid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span>Yasamin Zaid</span
+                  ><span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  ></a
+                >
+              </h3>
+              <p>
+                Computer Science undergraduate with a strong interest in
+                building high-quality software and refining it through close
+                attention to design and detail. Alongside experience as a
+                Graphic Designer and Web Developer for an international company,
+                she also contributes creative and student-facing insight through
+                her work at BCU.
+              </p>
+            </article>
           </div>
         </div>
-        <div class="tc-body">
-          <div class="tc-name">Team Member</div>
-          <div class="tc-role">Role</div>
-          <p class="tc-bio">Bio coming soon.</p>
+      </section>
+
+      <!-- ── Guest facilitators ─────────────────────────────── -->
+      <section
+        class="section section--tight section--alt"
+        aria-labelledby="facilitators-heading"
+      >
+        <div class="container">
+          <div class="section-head">
+            <div class="section-label reveal" aria-hidden="true">
+              Guest facilitators
+            </div>
+            <div>
+              <h2 class="section-title reveal" id="facilitators-heading">
+                Contributors who strengthen the programme.
+              </h2>
+              <p class="section-intro reveal">
+                These facilitators bring enterprise support, entrepreneurship,
+                design, legal awareness, and technical perspective into the
+                cohort. Each adds practical value rather than ornamental
+                prestige, which is how this sort of thing should work.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-grid">
+            <article class="person reveal" aria-labelledby="person-jennine">
+              <span class="person-role">Enterprise support</span>
+              <h3 id="person-jennine">
+                <a
+                  href="https://www.linkedin.com/in/jennine-jones-214aa892/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Jennine Jones</span>
+                  <span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  >
+                </a>
+              </h3>
+              <p>
+                Student Enterprise Manager at Birmingham City University. She
+                brings practical knowledge of student enterprise support,
+                incubation pathways, and how to help students move from early
+                interest to workable opportunities.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-colin">
+              <span class="person-role">Entrepreneurship and strategy</span>
+              <h3 id="person-colin">
+                <a
+                  href="https://www.linkedin.com/in/dr-colin-akhurst-946475273/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Dr Colin Akhurst</span>
+                  <span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  >
+                </a>
+              </h3>
+              <p>
+                Lecturer in Strategy and Entrepreneurship and Module Lead for
+                Enterprise Growth at BCU. He brings practice-based teaching,
+                microbusiness insight, and a sharp understanding of how early
+                ventures grow beyond the first burst of enthusiasm.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-nassir">
+              <span class="person-role">Business analytics and systems</span>
+              <h3 id="person-nassir">
+                <a
+                  href="https://www.linkedin.com/in/nassir1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Dr Nassir Mohamed Ibrahim</span>
+                  <span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  >
+                </a>
+              </h3>
+              <p>
+                Senior Lecturer and Course Lead for Business Management at BCU.
+                He contributes systems thinking, data-driven decision-making,
+                and an employability-focused view of what makes student work
+                legible to employers and external partners.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-braah">
+              <span class="person-role">Creative facilitation</span>
+              <h3 id="person-braah">
+                <a
+                  href="https://www.linkedin.com/in/bra%E2%80%99ah-awadh-5110692a4/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Bra'ah Awadh</span>
+                  <span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  >
+                </a>
+              </h3>
+              <p>
+                President of Creative Exchange, a society built around practical
+                workshops and creative collaboration across disciplines. She
+                supports the programme's design strand with attention to user
+                perception, creative thinking, and visual communication.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-gia">
+              <span class="person-role">Legal awareness</span>
+              <h3 id="person-gia">
+                <a
+                  href="https://www.linkedin.com/in/gia-dhami/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Gia Dhami</span>
+                  <span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  >
+                </a>
+              </h3>
+              <p>
+                Contributes the legal-awareness strand through BCU Pro Bono,
+                also known as League of Justice. Her input helps founders think
+                more clearly about intellectual property, responsibility, and
+                the legal edges that can otherwise stay fuzzily ignored.
+              </p>
+            </article>
+
+            <article class="person reveal" aria-labelledby="person-michael">
+              <span class="person-role">Technical contributor</span>
+              <h3 id="person-michael">
+                <a
+                  href="https://www.linkedin.com/in/profile-mmartinak/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Michael Martinak</span>
+                  <span class="person-link-mark" aria-hidden="true"
+                    >LinkedIn</span
+                  >
+                </a>
+              </h3>
+              <p>
+                Supports the programme's technical strand, contributing to the
+                session on AI tools, prototyping, and cyber security
+                fundamentals. His involvement helps keep the practical tooling
+                side of the programme grounded in real technical concerns.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Partners ──────────────────────────────────────── -->
+      <section
+        class="section section--tight"
+        aria-labelledby="partners-heading"
+      >
+        <div class="container">
+          <div class="section-head">
+            <div class="section-label reveal" aria-hidden="true">Partners</div>
+            <div>
+              <h2 class="section-title reveal" id="partners-heading">
+                Organisations that widen the programme.
+              </h2>
+              <p class="section-intro reveal">
+                These partner organisations expand what the programme can offer,
+                from enterprise support and technical practice to creative
+                collaboration and legal awareness.
+              </p>
+            </div>
+          </div>
+
+          <div class="partner-groups">
+            <article
+              class="partner-group reveal"
+              aria-labelledby="society-partners"
+            >
+              <h3 id="society-partners">Society and community partners</h3>
+              <ul role="list">
+                <li>
+                  <a
+                    href="https://bcucybersoc.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >BCU Cyber Security Society</a
+                  >
+                  — technical student community focused on real security tasks,
+                  practical projects, and structured peer support.
+                </li>
+                <li>
+                  <a
+                    href="https://www.bcusu.com/organisation/creativeexhange/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >BCU Creative Exchange Society</a
+                  >
+                  — creative workshops and cross-course collaboration in design,
+                  photography, illustration, and media.
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/league-of-justice"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >BCU Pro Bono (League of Justice)</a
+                  >
+                  — student-led legal initiative that brings advocacy,
+                  fundraising, and legal-awareness experience into the wider BCU
+                  ecosystem.
+                </li>
+              </ul>
+            </article>
+
+            <article
+              class="partner-group reveal"
+              aria-labelledby="institutional-partners"
+            >
+              <h3 id="institutional-partners">Institutional partner</h3>
+              <ul role="list">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/bcu-student-enterprise/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >BCU Student Enterprise</a
+                  >
+                  — Birmingham City University's student enterprise team,
+                  helping students and graduates explore, experiment, and bring
+                  ideas to life through events, programmes, and support.
+                </li>
+                <li>
+                  <a
+                    href="https://www.bcu.ac.uk/business-school"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >BCU Business School</a
+                  >
+                  — Birmingham City University's Business School, supporting
+                  enterprise, management, and entrepreneurship education.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Get in touch ───────────────────────────────────── -->
+      <section class="section section--tight" aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-label reveal" aria-hidden="true">Contact</div>
+
+            <div>
+              <h2 class="section-title reveal" id="contact-heading">
+                Get in touch.
+              </h2>
+
+              <p class="section-intro reveal">
+                All programme enquiries are handled through LinkedIn. Students,
+                partners, and collaborators are welcome to reach out there.
+              </p>
+
+              <a
+                href="https://www.linkedin.com/company/bcu-innovation-labs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-linkedin reveal"
+                aria-label="Contact BCU Innovation Labs on LinkedIn"
+              >
+                <span class="contact-linkedin-label"
+                  >Primary communication channel</span
+                >
+
+                <span class="contact-linkedin-title">
+                  BCU Innovation Labs on LinkedIn
+                </span>
+
+                <span class="contact-linkedin-desc">
+                  Send a message, follow the programme, and stay informed about
+                  updates, cohorts, and events.
+                </span>
+
+                <span class="contact-linkedin-icon" aria-hidden="true">in</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CTA ───────────────────────────────────────────── -->
+      <section class="cta-band" aria-labelledby="cta-heading">
+        <div class="container">
+          <div class="cta-band-inner">
+            <div class="reveal">
+              <h2 id="cta-heading">
+                Built by students. Strengthened by the right partners.
+              </h2>
+              <p class="muted">
+                BCU Innovation Labs works because students are not building it
+                alone. The right partners make the work more useful, more
+                demanding, and more real.
+              </p>
+            </div>
+            <a href="workshops.html" class="button-ghost reveal"
+              >See the programme</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container">
+        <div class="footer-upper">
+          <a
+            href="index.html"
+            class="brand"
+            aria-label="BCU Innovation Labs — home"
+          >
+            <span class="brand-top" aria-hidden="true">Innovation Labs</span>
+            <span class="brand-bottom">Birmingham City University</span>
+          </a>
+
+          <nav aria-label="Footer navigation">
+            <ul class="footer-links" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="workshops.html">Programme</a></li>
+              <li><a href="demoday.html">Demo Day</a></li>
+              <li><a href="team.html">Team &amp; Partners</a></li>
+            </ul>
+          </nav>
+
+          <a
+            href="https://www.linkedin.com/company/bcu-innovation-labs"
+            class="button-secondary"
+          >
+            Get in touch
+          </a>
+        </div>
+
+        <div class="footer-lower">
+          <p class="footer-copy">
+            © <span data-year></span> BCU Innovation Labs · Birmingham City
+            University
+          </p>
+          <nav aria-label="Legal links">
+            <ul class="footer-legal" role="list">
+              <li><a href="privacy.html">Privacy policy</a></li>
+              <li><a href="accessibility.html">Accessibility</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
+    </footer>
 
-    </div>
-
-  </main>
-
-  <footer>
-    <a href="index.html" class="footer-logo nav-logo">
-      <span class="nl-top">Innovation Labs</span>
-      <span class="nl-btm">BCU</span>
-    </a>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="workshops.html">Workshops</a></li>
-      <li><a href="demoday.html">Demo Day</a></li>
-      <li><a href="team.html">Team</a></li>
-    </ul>
-    <span class="footer-copy">© 2025 BCU Innovation Labs</span>
-  </footer>
-
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
