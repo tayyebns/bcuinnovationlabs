@@ -82,6 +82,7 @@ ol {
   --accent: #b8860b; /* dark goldenrod — AA-passing amber */
   --rule: #e2deda;
   --rule-soft: #ede9e5;
+  --accent-blue: #1f3a73;
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -907,6 +908,98 @@ main {
 }
 
 /* ── Details grid (demoday/workshops) ────────────────────── */
+/* ── Session highlights page ────────────────────────────── */
+
+.session-highlights {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.session-highlight-card {
+  background: var(--bg);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.session-highlight-copy {
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.session-highlight-kicker {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+}
+
+.session-highlight-copy h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1;
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+  color: var(--text);
+}
+
+.session-highlight-copy p {
+  color: var(--text-soft);
+  line-height: 1.75;
+  max-width: 60ch;
+}
+
+.session-highlight-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.session-highlight-meta dt {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.session-highlight-meta dd {
+  color: var(--text-soft);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.session-highlight-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule-soft);
+}
+
+.session-highlight-gallery img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-soft);
+}
+
+.button-secondary {
+  border: 1px solid var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.button-secondary:hover {
+  background: var(--accent-blue);
+  color: white;
+}
 
 .details-grid {
   display: grid;
@@ -1567,6 +1660,15 @@ main {
 @media (max-width: 780px) {
   main {
     padding-top: 4.85rem;
+  }
+
+  .session-highlight-meta,
+  .session-highlight-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .session-highlight-gallery img {
+    height: 220px;
   }
 
   .container,
