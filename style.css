@@ -1095,7 +1095,6 @@ main {
   color: var(--text-soft);
 }
 
-
 /* ── Focus grid (workshops) ──────────────────────────────── */
 
 .focus-grid {
@@ -1392,7 +1391,6 @@ main {
   border-color: var(--text-soft);
 }
 
-
 /* ── Footer ──────────────────────────────────────────────── */
 
 .site-footer {
@@ -1572,10 +1570,25 @@ main {
   }
 
   .container,
-  .nav-shell,
-  .footer-upper,
-  .footer-lower {
+  .nav-shell {
     width: min(var(--max), calc(100% - 2rem));
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: auto;
+  }
+
+  .footer-links a {
+    padding: 0.15rem 0.45rem;
+    font-size: 0.66rem;
+  }
+
+  .footer-upper .button-secondary {
+    width: 100%;
+    justify-content: center;
   }
 
   .nav-shell {
