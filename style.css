@@ -897,7 +897,7 @@ main {
   letter-spacing: -0.04em;
   font-weight: 600;
   color: var(--text);
-  max-width: 12ch;
+  max-width: 14ch;
 }
 
 .page-intro {
